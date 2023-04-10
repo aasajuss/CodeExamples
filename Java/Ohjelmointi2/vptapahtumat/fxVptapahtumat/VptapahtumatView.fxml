@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import fi.jyu.mit.fxgui.ListChooser?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxVptapahtumat.AppGUIController">
+   <bottom>
+      <HBox prefHeight="50.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" onAction="#handleUusiTapahtuma" text="Lisää uusi">
+               <HBox.margin>
+                  <Insets left="30.0" top="10.0" />
+               </HBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#handleMuokkaa" text="Muokkaa">
+               <HBox.margin>
+                  <Insets left="30.0" top="10.0" />
+               </HBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#handlePoista" text="Poista">
+               <HBox.margin>
+                  <Insets left="30.0" top="10.0" />
+               </HBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#handleTallenna" text="Tallenna">
+               <HBox.margin>
+                  <Insets left="30.0" top="10.0" />
+               </HBox.margin>
+            </Button>
+         </children></HBox>
+   </bottom>
+   <top>
+      <BorderPane prefHeight="120.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <top>
+            <MenuBar BorderPane.alignment="CENTER">
+              <menus>
+                <Menu mnemonicParsing="false" text="Tiedosto">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#handleLopeta" text="Lopeta" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" onAction="#handleTietoja" text="Ohje">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Tietoja" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </top>
+         <center>
+            <TextField fx:id="hakuehto" onKeyReleased="#handleHaku" maxWidth="300.0" promptText="Hae tapahtumaa:" BorderPane.alignment="CENTER_LEFT">
+               <BorderPane.margin>
+                  <Insets left="15.0" />
+               </BorderPane.margin>
+            </TextField>
+         </center>
+         <bottom>
+            <HBox prefHeight="35.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+               <children>
+                  <CheckBox fx:id="nimirajaus" onMouseReleased="#handleRajaus" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" prefHeight="21.0" prefWidth="80.0" text="Nimi:" />
+                  <CheckBox fx:id="maarajaus" onMouseReleased="#handleRajaus" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" prefWidth="80.0" text="Maa:" />
+                  <CheckBox fx:id="pvmrajaus" onMouseReleased="#handleRajaus" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" prefWidth="80.0" text="Pvm:" />
+                  <CheckBox fx:id="palkintorajaus" onMouseReleased="#handleRajaus" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" prefWidth="100.0" text="Palkinto:" />
+                  <CheckBox fx:id="pelirajaus" onMouseReleased="#handleRajaus" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" prefWidth="70.0" text="Peli:">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </CheckBox>
+               </children>
+            </HBox>
+         </bottom>
+      </BorderPane>
+   </top>
+   <center>
+      <BorderPane fx:id="main" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <center>
+            <ScrollPane onKeyReleased="#handleMuokataan" fx:id="panelTapahtuma" prefHeight="200.0" prefWidth="367.0" BorderPane.alignment="CENTER">
+              <content>
+                <AnchorPane fx:id="tapahtuma" minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
+              </content>
+            </ScrollPane>
+         </center>
+         <left>
+            <ListChooser fx:id="chooserTapahtumat" prefHeight="230.0" prefWidth="181.0" BorderPane.alignment="CENTER" />
+         </left>
+      </BorderPane>
+   </center>
+</BorderPane>

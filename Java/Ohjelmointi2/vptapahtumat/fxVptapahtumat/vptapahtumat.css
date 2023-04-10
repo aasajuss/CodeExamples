@@ -1,0 +1,25 @@
+.root {
+	-fx-background-color: #e7e7e7;
+	-fx-font-family: "Arial";
+}
+
+.button {
+	-fx-color: #ffffff;
+	-fx-focus-color: #e7e7e7;
+}
+
+#hakuehto {
+	-fx-focus-color: #e7e7e7;
+}
+
+#panelTapahtuma {
+	-fx-focus-color: #e7e7e7;
+}
+
+#main {
+	-fx-focus-color: #e7e7e7 ;
+}
+
+.list-cell:selected {
+	-fx-background-color: #A39EA0;
+}
