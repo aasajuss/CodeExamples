@@ -1,1 +1,1 @@
-Altered code version of a PONG-style minigame.
+PONG-style minigame with altered variables.
