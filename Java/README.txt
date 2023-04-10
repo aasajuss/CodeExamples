@@ -1,1 +1,0 @@
-A GUI for a small database java program created in Ohjelmointi 2. 
