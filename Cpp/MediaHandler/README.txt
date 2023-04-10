@@ -1,0 +1,1 @@
+A small program for fast sorting of media files into distinct folders.

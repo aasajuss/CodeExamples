@@ -1,0 +1,1 @@
+Function that transforms Tiled map files (.tmx) into tilemaps for further use. In this case, for SFML to draw.
