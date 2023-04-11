@@ -1,2 +1,2 @@
 # CodeExamples
-Some code examples from my local projects
+Some code examples from my local projects.
