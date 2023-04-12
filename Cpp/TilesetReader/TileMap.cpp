@@ -5,8 +5,8 @@
 sf::VertexArray m_vertices;
 sf::Texture m_tileset;
 
-bool TileMap::load(const std::string& tileset, sf::Vector2u tileSize, int* tiles, unsigned int width, unsigned int height, unsigned int multiplier)
-{
+bool TileMap::load(const std::string& tileset, sf::Vector2u tileSize, int* tiles, unsigned int width, unsigned int height, unsigned int multiplier) {
+	
 	// load the tileset texture
 	if (!m_tileset.loadFromFile(tileset))
 		return false;
@@ -48,16 +48,14 @@ bool TileMap::load(const std::string& tileset, sf::Vector2u tileSize, int* tiles
 	return true;
 }
 
-void TileMap::draw(sf::RenderTarget& target, sf::RenderStates states) const
-{
+void TileMap::draw(sf::RenderTarget& target, sf::RenderStates states) const {
+	
 	// apply the transform
 	states.transform *= getTransform();
 
 	// apply the tileset texture
-	
 	states.texture = &m_tileset;
 	
-
 	// draw the vertex array
 	target.draw(m_vertices, states);
 }
